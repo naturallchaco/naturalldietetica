@@ -1,0 +1,2313 @@
+/*
+ * CSS para NaturAll: Diseño Unificado y Funcional (v2.0)
+ */
+
+/* 1. Variables de Color y Estilos Generales */
+:root {
+    --blanco-cremoso: #fefcf5;
+    --crema-suave: #f9f6e8;
+    --verde-bosque: #4a6741; /* Principal oscuro */
+    --verde-natural: #5a8a64; /* Principal medio */
+    --verde-claro: #87a96b; /* Principal claro */
+    --amarillo-miel: #f4d03f; /* Acento */
+    --dorado: #e8c547; /* Acento más oscuro */
+    --mostaza: #d4a843;
+    --texto-oscuro: #2c3e26;
+    --gris-suave: #e8e6df;
+    --rojo-alerta: #d9534f;
+    --sombra-suave: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background: var(--crema-suave);
+    color: var(--texto-oscuro);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+a {
+    color: var(--verde-natural);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--verde-bosque);
+}
+
+/* --- ESTILOS GENERALES DEL INDEX --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* --- HERO SECTION --- */
+.hero-slider {
+    background: url('img/fondo_natural.jpg') no-repeat center center/cover; /* Asegúrate de tener una imagen */
+    color: black;
+    text-align: center;
+    padding: 6rem 1rem;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.btn-xl {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+/* --- PROMO BAR --- */
+.promo-bar {
+    background-color: #fce8a6; /* Amarillo suave para alerta */
+    color: #38761d; 
+    text-align: center;
+    padding: 0.75rem 0;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.promo-bar a {
+    color: #a4c680;
+    text-decoration: underline;
+}
+
+/* --- PRODUCTOS DESTACADOS --- */
+.productos-destacados h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #38761d;
+}
+
+.destacados-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Estilos de la tarjeta de producto (reutilizados del archivo de ofertas) */
+.product-card {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.precio-anterior {
+    color: #999;
+    margin-right: 0.5rem;
+}
+
+.precio-actual {
+    color: #c90000; /* Precio de oferta en rojo */
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* --- CATEGORÍAS RÁPIDAS --- */
+.categorias-rapidas h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #38761d;
+}
+
+.categorias-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.category-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 150px;
+    background-color: #f7f7f7;
+    border: 2px solid #a4c680;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #38761d;
+    font-weight: bold;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.category-link i {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.category-link:hover {
+    background-color: #e5f5e5;
+    border-color: #38761d;
+}
+
+/* contacto */
+/* --- Estilos específicos de la página de Contacto --- */
+
+.contacto-page {
+    padding-top: 2rem;
+}
+
+.contacto-page .page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contacto-page .page-header h1 {
+    color: #38761d;
+    font-size: 2.5rem;
+}
+
+.contacto-page .subtitle {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #555;
+}
+
+.contacto-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Columna de info más pequeña que el formulario */
+    gap: 3rem;
+    align-items: flex-start; /* Alinea arriba */
+    margin-bottom: 4rem;
+}
+
+/* --- COLUMNA DE INFORMACIÓN --- */
+.contacto-info {
+    padding: 2rem;
+    background-color: var(--blanco-cremoso); /* Fondo verde claro */
+    border-radius: 10px;
+}
+
+.contacto-info h3 {
+    color: #38761d;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #a4c680;
+    padding-bottom: 0.5rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1.5rem;
+}
+
+.info-item i {
+    font-size: 2rem;
+    color: #38761d;
+}
+
+.info-item h4 {
+    margin: 0 0 0.2rem 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.info-item p {
+    margin: 0;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+/* --- COLUMNA DE FORMULARIO --- */
+.contacto-form {
+    padding: 2rem;
+    background-color: var(--blanco-cremoso);
+    border-radius: 10px;
+}
+
+.contacto-form h3 {
+    color: #38761d;
+    margin-bottom: 1rem;
+}
+
+.contacto-form .form-description {
+    margin-bottom: 2rem;
+    color: #777;
+}
+
+.contacto-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacto-form label {
+    margin-top: 1rem;
+    margin-bottom: 0.2rem;
+    font-weight: bold;
+    color: #38761d;
+}
+
+.contacto-form input[type="text"],
+.contacto-form input[type="email"],
+.contacto-form textarea {
+    padding: 0.75rem;
+    border: 1px solid #a4c680;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.contacto-form input:focus,
+.contacto-form textarea:focus {
+    border-color: #38761d;
+    outline: none;
+    box-shadow: 0 0 5px rgba(56, 118, 29, 0.3);
+}
+
+.btn-block {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 1rem;
+}
+
+/* --- SECCIÓN DE MAPA --- */
+.ubicacion-mapa {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.ubicacion-mapa h3 {
+    color: #38761d;
+    margin-bottom: 0.5rem;
+}
+
+.map-embed {
+    margin-top: 1.5rem;
+    width: 100%;
+    height: 500px; /* Altura generosa para el mapa */
+    border: 5px solid #f7f7f7;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.map-embed iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* --- Media Queries (Adaptación móvil) --- */
+@media (max-width: 900px) {
+    .contacto-grid {
+        grid-template-columns: 1fr; /* Columna única en móviles */
+    }
+}
+/* --- 2. Encabezado y Barra de Navegación (Optimización Menor) --- */
+
+/* Barra superior de "Retiro en el local" */
+.top-bar {
+    background-color: var(--blanco-cremoso);
+    color: var(--texto-oscuro);
+    padding: 0.5rem 2rem;
+    text-align: center;
+    font-size: 0.9em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid var(--gris-suave);
+}
+
+.top-bar .arrow-icon {
+    font-size: 1.2em;
+    cursor: pointer;
+    color: var(--verde-natural);
+}
+
+/* Contenedor principal del encabezado para la nueva distribución */
+.main-header-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: var(--blanco-cremoso);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* MODIFICADO: Contenedor principal de búsqueda, logo e íconos */
+.main-header-top {
+    display: flex;
+    justify-content: space-between; /* Alinea los elementos a los costados */
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 1rem;
+    /* Se elimina el 'gap' y se usan 'flex-basis' para el equilibrio */
+}
+
+/* MODIFICADO: Contenedor del logo */
+.main-header-top .logo {
+    flex-grow: 0; /* Ya no se estira, solo usa el espacio de su contenido */
+    text-align: center;
+    order: 2; 
+}
+
+/* MODIFICADO: Contenedor de la búsqueda */
+.main-header-top .search-container {
+    order: 1; 
+    flex-basis: 33%; /* Ocupa un tercio del espacio */
+    margin-right: 0; 
+    display: flex; /* Para controlar la alineación de su contenido */
+    justify-content: flex-start; /* Alinea el buscador a la izquierda */
+}
+
+/* MODIFICADO: Contenedor de los íconos */
+.main-header-top .header-icons {
+    order: 3; 
+    margin-left: 0; 
+    gap: 1rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-basis: 33%; /* Ocupa un tercio del espacio, igual que la búsqueda */
+    justify-content: flex-end; /* Alinea los íconos a la derecha */
+}
+
+.main-header-top .header-icons .cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--amarillo-miel);
+    color: var(--texto-oscuro);
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.7em;
+    font-weight: 700;
+}
+
+.main-header-top .header-icons a {
+    color: var(--texto-oscuro);
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+.main-header-top .header-icons a:hover {
+    color: var(--verde-natural);
+}
+
+.main-header-top .search-container input {
+    border: none;
+    padding: 5px 10px;
+    font-size: 1em;
+    background-color: var(--crema-suave);
+    outline: none;
+    border-radius: 20px 0 0 20px;
+}
+
+.main-header-top .search-container button {
+    background-color: var(--verde-claro);
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 0 20px 20px 0;
+}
+
+.main-header-top .search-container button:hover {
+    background-color: var(--verde-natural);
+}
+
+.main-header-top .logo h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--verde-bosque);
+    margin: 0;
+
+}
+
+.main-header-top .logo a {
+    text-decoration: none;
+    
+}
+
+.main-nav {
+    width: 100%;
+    text-align: center;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav a {
+    color: var(--texto-oscuro);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.main-nav a:hover {
+    color: var(--verde-natural);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f8f8f8;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+nav ul li {
+    padding: 30px 45px; 
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #5cb85c;
+}
+/* --- 3. Estilos de Tipografía y Layout Principal --- */
+
+main {
+    padding: 2rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+h1 {
+    color: var(--verde-bosque);
+    font-size: 2.8em;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+    border-bottom: 2px solid var(--gris-suave);
+}
+
+h2 {
+    color: var(--verde-bosque);
+    font-size: 2.2em;
+    text-align: center;
+    margin: 2rem 0;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--verde-natural), var(--dorado));
+}
+
+h3 {
+    color: var(--verde-natural);
+    font-size: 1.6em;
+    margin: 1.5rem 0 1rem 0;
+    padding-left: 15px;
+    border-left: 4px solid var(--amarillo-miel);
+}
+
+section {
+    background: var(--blanco-cremoso);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--sombra-suave);
+    border-top: 4px solid var(--dorado);
+}
+
+/* --- 4. Botones y Alertas (Estilos Unificados) --- */
+
+.btn-principal,
+.btn-secundario,
+.btn-secundario-alerta,
+button {
+    background: linear-gradient(135deg, var(--verde-natural), var(--dorado));
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-principal:hover,
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secundario {
+    background: var(--gris-suave);
+    color: var(--texto-oscuro);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secundario:hover {
+    background: var(--verde-claro);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secundario-alerta {
+    background: var(--rojo-alerta);
+    color: white;
+}
+
+.btn-secundario-alerta:hover {
+    background: #c9302c;
+    transform: translateY(-2px);
+}
+
+.btn-sm {
+    padding: 8px 15px;
+    font-size: 0.8em;
+}
+
+.disabled,
+.disabled:hover {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Estilos para alertas y mensajes */
+.alerta {
+    padding: 15px;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    border-left: 5px solid;
+}
+
+.alerta.info {
+    background-color: rgba(135, 169, 107, 0.1);
+    border-color: var(--verde-natural);
+    color: var(--verde-bosque);
+}
+
+.alerta.error {
+    background-color: rgba(217, 83, 79, 0.1);
+    border-color: var(--rojo-alerta);
+    color: var(--rojo-alerta);
+}
+
+/* --- 5. Estilos de Formularios y Auth --- */
+
+.auth-container {
+    max-width: 500px;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.form-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    gap: 15px;
+}
+
+.form-toggle button {
+    background: var(--gris-suave);
+    color: var(--texto-oscuro);
+    border: 2px solid var(--gris-suave);
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: none;
+}
+
+.form-toggle button.active,
+.form-toggle button:hover {
+    background: linear-gradient(90deg, var(--verde-claro), var(--amarillo-miel));
+    color: white;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+    padding: 12px 15px;
+    border: 2px solid var(--gris-suave);
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+    background: var(--blanco-cremoso);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--verde-natural);
+    box-shadow: 0 0 5px rgba(90, 138, 100, 0.3);
+}
+
+/* --- 6. Estilos de Componentes de Tienda (Listado de Productos) --- */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Mínimo 250px */
+    gap: 30px;
+    margin-top: 2rem;
+}
+
+.product-category {
+    padding: 0;
+    border-top: none;
+    box-shadow: none;
+    background: transparent;
+}
+
+.category-title {
+    text-align: left;
+    margin-bottom: 1rem;
+    font-size: 2em;
+    border-left: none;
+}
+
+.product-card {
+    background: var(--blanco-cremoso);
+    border-radius: 12px;
+    box-shadow: var(--sombra-suave);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    border: 1px solid var(--gris-suave);
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.product-image-thumb {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid var(--gris-suave);
+}
+
+.card-body {
+    padding: 15px;
+    text-align: center;
+}
+
+.product-name {
+    font-size: 1.2em;
+    min-height: 40px; /* Asegura altura mínima para títulos de 1 o 2 líneas */
+    margin-top: 0;
+    margin-bottom: 5px;
+    padding-left: 0;
+    border-left: none;
+}
+
+.product-name a {
+    color: var(--verde-bosque);
+}
+
+.product-price {
+    font-size: 1.5em;
+    color: var(--rojo-alerta); /* Usamos rojo para el precio para destacarlo */
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.badge-oferta {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: var(--amarillo-miel);
+    color: var(--texto-oscuro);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.8em;
+    z-index: 5;
+}
+
+/* --- 7. Estilos de Componentes de Tienda (Detalle de Producto) --- */
+
+.product-detail {
+    padding: 2rem;
+}
+
+.product-info-wrapper {
+    display: flex;
+    gap: 40px;
+    background: var(--blanco-cremoso);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--sombra-suave);
+}
+
+.product-image {
+    flex-basis: 40%;
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+    object-fit: contain;
+    border-radius: 10px;
+    border: 1px solid var(--gris-suave);
+}
+
+.product-details {
+    flex-basis: 60%;
+}
+
+.product-details h2 {
+    text-align: left;
+    margin-top: 0;
+    font-size: 2.5em;
+}
+
+.product-details h2::after {
+    display: none;
+}
+
+.product-details .price {
+    font-size: 2.8em;
+    color: var(--verde-bosque);
+    font-weight: bold;
+    margin: 10px 0 20px 0;
+}
+
+.stock-status {
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.stock-in-status {
+    color: var(--verde-natural);
+}
+
+.stock-out-status {
+    color: var(--rojo-alerta);
+}
+
+.product-description {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding-left: 0;
+    border-left: none;
+}
+
+.product-description h3 {
+    padding-left: 0;
+    border-left: none;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.quantity-selector input {
+    width: 80px;
+    text-align: center;
+}
+
+.add-to-cart-form .btn-principal {
+    width: 100%;
+    max-width: 300px;
+    font-size: 1.1em;
+}
+
+/* --- 8. Estilos de Componentes de Tienda (Carrito) --- */
+/* ========================================
+   ESTILOS PARA CARRITO - APARIENCIA TICKET
+   ======================================== */
+
+.carrito-form {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.carrito-list {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.carrito-list table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 1.5rem;
+}
+
+.carrito-list thead {
+    background: var(--verde-bosque);
+    color: white;
+}
+
+.carrito-list thead th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.carrito-list thead th:first-child {
+    border-radius: 8px 0 0 0;
+}
+
+.carrito-list thead th:last-child {
+    border-radius: 0 8px 0 0;
+}
+
+.carrito-list tbody tr {
+    border-bottom: 1px dashed var(--gris-suave);
+    transition: background-color 0.2s ease;
+}
+
+.carrito-list tbody tr:last-child {
+    border-bottom: none;
+}
+
+.carrito-list tbody tr:hover {
+    background-color: var(--crema-suave);
+}
+
+.carrito-list tbody td {
+    padding: 1.2rem 1rem;
+    vertical-align: middle;
+}
+
+.carrito-list tbody td[data-label="Producto"] {
+    font-weight: 600;
+    color: var(--texto-oscuro);
+    font-size: 1.05em;
+}
+
+.carrito-list .text-center {
+    text-align: center;
+}
+
+.carrito-list .text-right {
+    text-align: right;
+    font-weight: 600;
+    color: var(--verde-bosque);
+    font-size: 1.1em;
+}
+
+.carrito-list .input-cantidad {
+    width: 70px;
+    text-align: center;
+    padding: 8px;
+    border: 2px solid var(--gris-suave);
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: 600;
+    transition: border-color 0.3s ease;
+}
+
+.carrito-list .input-cantidad:focus {
+    outline: none;
+    border-color: var(--verde-natural);
+    box-shadow: 0 0 0 3px rgba(90, 138, 100, 0.1);
+}
+
+.btn-eliminar {
+    background: none;
+    border: none;
+    color: #c0392b;
+    padding: 8px 12px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+}
+
+.btn-eliminar:hover {
+    background-color: #c0392b;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Footer del carrito - Estilo Ticket */
+.carrito-footer {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.resumen-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1.5rem 0;
+    border-top: 3px double var(--verde-bosque);
+    border-bottom: 3px double var(--verde-bosque);
+    margin-bottom: 1rem;
+}
+
+.resumen-total h3 {
+    margin: 0;
+    font-size: 1.6em;
+    color: var(--texto-oscuro);
+    padding-left: 0;
+    border-left: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.total-monto {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: var(--verde-bosque);
+    margin: 0;
+    font-family: 'Courier New', monospace;
+}
+
+.carrito-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.carrito-actions .btn-principal,
+.carrito-actions .btn-secundario {
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+    padding: 1rem 2rem;
+    font-size: 1.05em;
+}
+
+/* Botón vaciar carrito */
+.carrito-footer form[action*="carrito.php"] {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.btn-secundario-alerta {
+    background-color: transparent;
+    color: #c0392b;
+    border: 2px solid #c0392b;
+    padding: 0.7rem 1.5rem;
+    font-size: 0.95em;
+    transition: all 0.3s ease;
+}
+
+.btn-secundario-alerta:hover {
+    background-color: #c0392b;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* --- Estilos para la página de Seguimiento de Pedidos (pedido_seguimiento.php) --- */
+
+.seguimiento-page {
+    max-width: 900px;
+    margin-top: 40px;
+}
+
+.pedido-detalle {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 15px;
+    background: #f8f8f8;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.pedido-detalle h2 {
+    color: var(--verde-natural);
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+/* Barra de Progreso */
+.tracking-progress-bar {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0;
+    position: relative;
+    padding-bottom: 50px; /* Espacio para las etiquetas */
+}
+
+/* Línea de conexión de la barra de progreso */
+.tracking-progress-bar::before {
+    content: '';
+    position: absolute;
+    top: 15px; /* Altura de la mitad del icono */
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #e0e0e0;
+    z-index: 1;
+}
+
+.tracking-step {
+    position: relative;
+    text-align: center;
+    flex-grow: 1;
+    z-index: 2;
+}
+
+.step-icon {
+    width: 35px;
+    height: 35px;
+    background: #e0e0e0;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 1.2em;
+    transition: background 0.3s, color 0.3s;
+}
+
+.step-label {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #888;
+}
+
+/* Nuevo estilo para el badge de estado */
+/* =========================== BADGE DEL ESTADO ACTUAL
+   =========================== */
+
+.badge-estado {
+    display: inline-block;
+    padding: 0.35rem 0.6rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1;
+    border-radius: 6px;
+    color: #fff;
+}
+
+/* Pendiente / esperando pago / recién creado */
+.badge-pendiente,
+.badge-pendiente-de-pago {
+    background-color: #b58900;      /* amarillo oscuro */
+    border: 1px solid #8a6c00;
+}
+
+/* En preparación */
+.badge-en-preparación,
+.badge-en-preparacion {
+    background-color: #4a6741;      /* verde NaturAll */
+    border: 1px solid #31452c;
+}
+
+/* En camino / Enviado */
+.badge-en-camino,
+.badge-enviado {
+    background-color: #2e86c1;      /* celeste/azul de envío */
+    border: 1px solid #1f5a80;
+}
+
+/* Entregado */
+.badge-entregado {
+    background-color: #1e8449;      /* verde éxito */
+    border: 1px solid #145a31;
+}
+
+/* Cancelado */
+
+
+.datos-envio-container {
+    margin-top: 40px;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background: #fcfcfc;
+}
+
+/* ===========================
+   BARRA DE PROGRESO DE ESTADO
+   =========================== */
+
+.tracking-progress-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    padding: 1rem 1rem 1.5rem;
+    border-radius: 8px;
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+}
+
+/* Cada paso */
+.tracking-step {
+    flex: 1 1 120px;
+    min-width: 120px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #888;
+    position: relative;
+}
+
+/* Icono del paso */
+.tracking-step .step-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 0.5rem auto;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #999;
+}
+
+/* Texto debajo del icono */
+.tracking-step .step-label {
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+/* Paso completado (ya pasó) */
+.tracking-step.done {
+    color: #4a6741; /* verde NaturAll */
+}
+.tracking-step.done .step-icon {
+    border-color: #4a6741;
+    background: #4a6741;
+    color: #fff;
+}
+
+/* Paso actual */
+.tracking-step.active {
+    color: #e8c547; /* amarillo dorado que ya usás */
+    font-weight: 600;
+}
+.tracking-step.active .step-icon {
+    border-color: #e8c547;
+    background: #e8c547;
+    color: #4a6741;
+}
+
+/* Paso futuro (sin .done ni .active) */
+.tracking-step:not(.done):not(.active) {
+    opacity: 0.5;
+}
+.tracking-step:not(.done):not(.active) .step-icon {
+    border-color: #ccc;
+    background: #fff;
+    color: #999;
+}
+
+/* Solucionar solapamiento de la línea de progreso */
+.tracking-step:not(:first-child)::before {
+    /* Mantiene la línea en estados done */
+    left: -50%;
+}
+
+/* Tabla de productos comprados */
+.productos-comprados-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.productos-comprados-table th, .productos-comprados-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+.productos-comprados-table th {
+    background-color: var(--verde-claro);
+    color: var(--verde-natural-oscuro);
+    font-weight: 600;
+}
+.productos-comprados-table tfoot td {
+    background-color: #f0f0f0;
+    font-size: 1.1em;
+}
+
+/* Estilos para el formulario de búsqueda */
+.search-form {
+    text-align: center;
+    padding: 30px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 30px auto;
+}
+.search-form .input-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+.search-form input {
+    flex-grow: 1;
+}
+
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .carrito-list {
+        padding: 1rem;
+        overflow-x: auto;
+    }
+    
+    .carrito-list table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    .carrito-list thead {
+        display: none;
+    }
+    
+    .carrito-list tbody tr {
+        display: block;
+        margin-bottom: 1.5rem;
+        border: 1px solid var(--gris-suave);
+        border-radius: 8px;
+        padding: 1rem;
+        background: white;
+    }
+    
+    .carrito-list tbody td {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.7rem 0;
+        border: none;
+        text-align: right;
+    }
+    
+    .carrito-list tbody td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--texto-oscuro);
+        text-align: left;
+        flex: 1;
+    }
+    
+    .carrito-list tbody td[data-label="Producto"] {
+        font-size: 1.1em;
+        border-bottom: 2px solid var(--gris-suave);
+        padding-bottom: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .resumen-total {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .resumen-total h3 {
+        font-size: 1.3em;
+    }
+    
+    .total-monto {
+        font-size: 2em;
+    }
+    
+    .carrito-actions {
+        flex-direction: column;
+    }
+    
+    .carrito-actions .btn-principal,
+    .carrito-actions .btn-secundario {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .carrito-list {
+        padding: 0.5rem;
+    }
+    
+    .carrito-footer {
+        padding: 1.5rem 1rem;
+    }
+    
+    .total-monto {
+        font-size: 1.8em;
+    }
+}
+
+/* Alerta de carrito vacío */
+.alerta.info {
+    background-color: var(--crema-suave);
+    border-left: 4px solid var(--verde-natural);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+.alerta.info a {
+    color: var(--verde-bosque);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.alerta.info a:hover {
+    color: var(--verde-natural);
+}
+
+/* ------------------------------------------------------------------- */
+/* --- 9. Estilos de Componentes de Tienda (Categorías - MODO IMAGEN) --- */
+/* ------------------------------------------------------------------- */
+
+.category-page {
+    /* Quitamos el padding del container solo para esta vista, si es necesario */
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Definición de la cuadrícula base (Aplica display: grid al contenedor) */
+.category-grid {
+    display: grid;
+    gap: 20px;
+    margin-top: 2rem;
+    padding: 0 2rem; /* Añadimos padding para que no se pegue a los bordes */
+}
+
+
+/* REGLA CRÍTICA PARA CUADRÍCULA 2x4 (2 filas, 4 columnas) */
+.category-grid.image-mode {
+    /* El selector más específico define la cuadrícula 2x4 en escritorio */
+    grid-template-columns: repeat(4, 1fr) !important;
+    /* Con 8 items, automáticamente se crearán 2 filas */
+}
+
+/* Media Queries específicas para MODO IMAGEN */
+
+@media (max-width: 1100px) {
+    .category-grid.image-mode {
+        grid-template-columns: repeat(3, 1fr) !important; 
+        /* Con 8 items, se crearán aproximadamente 3 filas */
+    }
+}
+
+@media (max-width: 768px) {
+    .category-grid.image-mode {
+        grid-template-columns: repeat(2, 1fr) !important; /* 2 columnas en móvil */
+        /* Con 8 items, se crearán 4 filas */
+    }
+}
+
+@media (max-width: 480px) {
+    .category-grid.image-mode {
+        grid-template-columns: 1fr !important; 
+        /* 1 columna, 8 filas en móviles pequeños */
+    }
+}
+
+/* El enlace que envuelve toda la tarjeta */
+.category-card-link {
+    text-decoration: none;
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card-link:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(74, 103, 65, 0.4); 
+}
+
+/* Tarjeta contenedora de la imagen */
+.category-card.image-card {
+    padding: 0; 
+    border: none;
+    box-shadow: none;
+    position: relative;
+    height: 280px; /* Aumenté un poco la altura para mejor visualización en 2 filas */
+    background-color: var(--blanco-cremoso);
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.category-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    transition: transform 0.5s ease;
+}
+
+.category-card-link:hover .category-image {
+    transform: scale(1.1);
+}
+
+/* Capa de superposición para el nombre (overlay) */
+.category-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(44, 62, 38, 0.6); 
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; 
+    transition: background 0.3s ease, opacity 0.3s ease;
+    text-align: center;
+    padding: 10px;
+}
+
+.category-card-link:hover .category-overlay {
+    opacity: 1; 
+    background: rgba(44, 62, 38, 0.4); 
+}
+
+.category-overlay h3 {
+    color: white;
+    font-size: 1.8em;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    margin: 0;
+    padding: 0;
+    border-left: none; 
+}
+
+main.category-page {
+    display: block !important; /* Cambiamos de flex a block */
+    justify-content: unset !important;
+    align-items: unset !important;
+    min-height: auto !important;
+    padding: 2rem !important;
+}
+
+/* ASEGURAR QUE LA CUADRÍCULA FUNCIONE */
+.category-page .category-grid.image-mode {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 20px !important;
+    padding: 0 2rem !important;
+    margin-top: 2rem !important;
+}
+/* --- 10. Pie de Página --- */
+/* --- Footer Styling --- */
+
+.main-footer {
+    background-color:#5a8a64; 
+    color: #f7f7f7; /* Texto blanco/claro */
+    padding: 2rem 0; /* Espaciado superior e inferior */
+    font-size: 0.95rem;
+}
+
+.footer-container {
+    max-width: 1200px; /* Ancho máximo para centrar el contenido */
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-wrap: wrap; /* Permite que las secciones se envuelvan en pantallas pequeñas */
+    justify-content: space-between; /* Espacia las secciones */
+    gap: 2rem; /* Espacio entre las columnas */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Separador sutil */
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-section {
+    flex: 1; /* Distribuye el espacio entre las secciones */
+    min-width: 250px; /* Asegura que no se hagan demasiado pequeñas */
+}
+
+.main-footer h4 {
+    color: #d9e3c9; /* Tono de verde más claro para los títulos */
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #d9e3c9;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+/* Estilos para enlaces y listas */
+.main-footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-footer a {
+    color: #f7f7f7;
+    text-decoration: none;
+    transition: color 0.3s;
+    line-height: 1.8;
+}
+
+.main-footer a:hover {
+    color: #a4c680; /* Tono de hover llamativo */
+}
+
+/* Iconos de Contacto */
+.footer-section.info-contacto p i {
+    margin-right: 0.5rem;
+    width: 1rem; /* Fija el ancho para alineación */
+    text-align: center;
+}
+
+/* Redes Sociales */
+.social-icons a {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    display: inline-block;
+}
+
+.slogan {
+    margin-top: 1rem;
+    font-style: italic;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* Sección inferior de Copyright */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Iconos de Pago */
+.payment-methods i {
+    font-size: 1.5rem;
+    margin-left: 0.75rem;
+    color: #e8c547;
+}
+
+/* Media Query para móvil */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        min-width: 100%;
+    }
+    
+    .main-footer h4 {
+        margin: 1.5rem auto 1rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+    }
+    .footer-bottom p {
+        margin-bottom: 0.5rem;
+    }
+}
+
+.product-list-page {
+    /* Eliminamos el padding lateral para que el layout de tienda lo controle */
+    padding: 2rem 0; 
+}
+
+.shop-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr; 
+    gap: 30px;
+}
+
+/* Sidebar de Filtros */
+.filter-sidebar {
+    padding: 20px;
+    background: var(--blanco-cremoso);
+    border-radius: 12px;
+    box-shadow: var(--sombra-suave);
+    align-self: flex-start; 
+    position:relative; 
+    top: 5px; 
+}
+
+.filter-sidebar .sidebar-title {
+    font-size: 1.8em;
+    color: var(--verde-bosque);
+    margin-bottom: 1.5rem;
+    padding-left: 0;
+    border-left: none;
+    text-align: center;
+}
+
+.filter-group {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed var(--gris-suave);
+}
+
+.filter-group h4 {
+    color: var(--verde-natural);
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.filter-list {
+    list-style: none;
+    padding: 0;
+}
+
+.filter-list li {
+    margin-bottom: 5px;
+}
+
+.filter-list .filter-link {
+    display: block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: var(--texto-oscuro);
+    transition: background-color 0.2s;
+}
+
+.filter-list .filter-link:hover,
+.filter-list .filter-link.active {
+    background-color: var(--gris-suave);
+    color: var(--verde-bosque);
+    font-weight: 600;
+}
+
+.reset-filters {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Contenedor de Productos */
+.product-content {
+    width: 100%;
+}
+
+/* Aseguramos que el product-grid use todo el espacio del .product-content */
+.product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Mínimo 280px para que entren 3 o 4 por fila */
+    gap: 25px; /* Ajustamos el gap */
+    margin-top: 0; /* Eliminamos el margin top duplicado */
+}
+
+/* ========================================
+   ESTILOS PARA PÁGINA DE OFERTAS
+   ======================================== */
+
+.ofertas-page {
+    display: block !important;
+    justify-content: unset !important;
+    align-items: unset !important;
+}
+
+.ofertas-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.precio-anterior {
+    font-size: 0.85em;
+    color: var(--texto-oscuro);
+    display: block;
+    margin-bottom: 0.25rem;
+    opacity: 0.7;
+}
+
+.precio-oferta {
+    color: var(--verde-bosque);
+    font-weight: 700;
+    font-size: 1.4em;
+}
+
+.product-card.on-sale {
+    border: 2px solid var(--dorado);
+    box-shadow: 0 4px 12px rgba(232, 197, 71, 0.3);
+}
+
+.product-card.on-sale:hover {
+    box-shadow: 0 8px 20px rgba(232, 197, 71, 0.5);
+    transform: translateY(-5px);
+}
+
+/* ----------------------------------------------------------------- */
+/* ESTILOS DE NOTIFICACIÓN FLOTANTE (TOAST) */
+/* ----------------------------------------------------------------- */
+#floating-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: white;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+}
+
+.notification-hidden {
+    opacity: 0;
+    transform: translateY(100px); /* Empieza fuera de la vista */
+    pointer-events: none; /* Desactiva clics cuando está oculta */
+}
+
+.notification-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilo para éxito */
+#floating-notification.success {
+    background-color: #4CAF50; /* Verde */
+}
+
+/* Estilo para error (si lo implementas en JS) */
+#floating-notification.error {
+    background-color: #f44336; /* Rojo */
+}
+
+#floating-notification i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+#floating-notification #notification-message {
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.btn-ver-carrito {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: background-color 0.2s;
+}
+
+.btn-ver-carrito:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* gestion ventas*/
+.resumen-cards {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.card-resumen {
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+.card-resumen p {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.card-resumen h4 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.card-resumen.total h4 {
+    color: #007bff; /* Azul */
+}
+.card-resumen.costo h4 {
+    color: #ffc107; /* Amarillo/Naranja */
+}
+.card-resumen.ganancia h4 {
+    color: #28a745; /* Verde */
+}
+
+/* Breadcrumb en subcategorías */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9em;
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+.breadcrumb a {
+    color: #4a6741;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.breadcrumb a:hover {
+    color: #e8c547;
+    text-decoration: underline;
+}
+
+.breadcrumb .separator {
+    color: #999;
+}
+
+.breadcrumb .current {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Barra de información de categoría */
+.category-info-bar {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #4a6741;
+}
+
+.product-count-total {
+    margin: 0;
+    color: #555;
+    font-size: 0.95em;
+}
+
+/* Subcategory page específico */
+.subcategory-page .page-header h1 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.subcategory-page .page-header h1 i {
+    color: #4a6741;
+}
+
+/* Filtros activos en sidebar */
+.filter-link.active {
+    background: linear-gradient(135deg, #4a6741 0%, #5d7f52 100%);
+    color: white;
+    font-weight: 600;
+    pointer-events: none;
+}
+
+.filter-link.active i {
+    color: #e8c547;
+}
+
+/* Información adicional en sidebar */
+.filter-info {
+    background: #fff9e6;
+    border: 1px solid #e8c547;
+    border-radius: 6px;
+    padding: 0.75rem;
+    margin-top: 1rem;
+}
+
+.filter-info p {
+    margin: 0;
+    font-size: 0.85em;
+    color: #666;
+    display: flex;
+    align-items: start;
+    gap: 0.5rem;
+}
+
+.filter-info i {
+    color: #e8c547;
+    margin-top: 0.2rem;
+}
+
+/* --- 11. Media Queries (Responsividad) --- */
+
+@media (max-width: 992px) {
+    /* (Mantenemos tu código actual para 992px) */
+    .product-info-wrapper {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .product-details h2 {
+        text-align: center;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .shop-layout {
+        grid-template-columns: 1fr; 
+        gap: 20px; 
+    }
+    
+    .filter-sidebar {
+        position: static; 
+        top: auto;
+        width: 100%; 
+    }
+    
+    .filter-sidebar .sidebar-title {
+        text-align: left;
+    }
+
+    .main-header-wrapper {
+        padding: 1rem;
+    }
+    .main-header-top {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+    .main-header-top .search-container {
+        order: 2;
+        flex-basis: 70%; 
+        justify-content: center;
+    }
+
+    .resumen-total {
+        max-width: 100%;
+        justify-content: space-between;
+    }
+}
+
+
+
+/* ---------------------------------------------------- */
+/* --- 12. ESTILOS DE GESTIÓN ADMINISTRATIVA (UNIFICADO) --- */
+/* ---------------------------------------------------- */
+
+/* Re-configuración del título principal de la página administrativa */
+.container h2 {
+    color: var(--verde-bosque);
+    border-bottom: 2px solid var(--verde-claro);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    text-align: left; /* Los títulos de administración deben estar alineados a la izquierda */
+    margin-left: 0; /* Asegurar que no tenga margen del estilo anterior */
+}
+
+/* Sobreescribir el efecto "pop" de los botones globales para el admin */
+.btn-principal, .btn-agregar, .gestion-acciones a, button[type="submit"] {
+    border-radius: 5px; /* Bordes menos redondeados */
+    box-shadow: none;
+    text-transform: none;
+    font-size: 1em;
+    background-color: var(--verde-bosque);
+    color: white;
+    border: 1px solid var(--verde-bosque);
+    transition: background-color 0.3s;
+    transform: none; /* Eliminar el efecto de elevación */
+}
+
+.btn-principal:hover, .btn-agregar:hover, button[type="submit"]:hover {
+    background-color: var(--verde-natural);
+    box-shadow: none;
+}
+
+/* Botones secundarios (Cancelar, Revisar) */
+.btn-secundario, #cancelar-nuevo-producto {
+    background-color: var(--gris-suave);
+    color: var(--texto-oscuro);
+    border: 1px solid #ccc;
+    margin-left: 10px;
+}
+
+.btn-secundario:hover, #cancelar-nuevo-producto:hover {
+    background-color: #ddd;
+    color: var(--texto-oscuro);
+}
+
+/* Contenedor de acciones (Gestión de Personal) */
+.gestion-acciones {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+/* --- Formularios Admin (Añadir Producto/Proveedor) --- */
+.gestion-form form, #form-nuevo-producto {
+    margin: 20px 0;
+}
+
+.gestion-form form, #form-nuevo-producto form {
+    background-color: var(--blanco-cremoso);
+    padding: 20px;
+    border: 1px solid var(--gris-suave);
+    border-radius: 8px;
+    box-shadow: var(--sombra-suave);
+    margin-bottom: 30px;
+}
+
+.gestion-form label, #form-nuevo-producto label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--verde-bosque);
+}
+
+.gestion-form input, .gestion-form select,
+#form-nuevo-producto input, #form-nuevo-producto select,
+.pedido-header select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--verde-claro);
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+/* --- Tablas (Inventario y Proveedores) --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background-color: var(--blanco-cremoso);
+    box-shadow: var(--sombra-suave);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table thead th {
+    background-color: var(--verde-claro);
+    color: var(--texto-oscuro);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+table tbody tr:hover {
+    background-color: rgba(90, 138, 100, 0.1); /* Hover suave */
+}
+
+/* --- Botones/Iconos de Acción en Tablas --- */
+a[title="Editar"] i { color: #007bff; } /* Azul para editar */
+a[title="Eliminar"] i { color: var(--rojo-alerta); } /* Rojo para eliminar */
+a[title="Editar"], a[title="Eliminar"] {
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: opacity 0.2s;
+}
+
+/* --- Tarjetas de Información (Personal/Proveedores/Pedidos) --- */
+
+.card-gestion, .empleado, .pedido, .proveedor-info {
+    background-color: var(--blanco-cremoso);
+    padding: 20px;
+    border-left: 5px solid var(--verde-bosque);
+    border-radius: 8px;
+    box-shadow: var(--sombra-suave);
+    margin-bottom: 20px;
+}
+
+/* Estilos de gestión_personal.php */
+.empleado {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.empleado-info p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+}
+
+.empleado-acciones {
+    display: flex;
+    gap: 10px;
+    padding-top: 10px;
+    flex-shrink: 0;
+}
+
+.empleado-acciones .btn-editar, .empleado-acciones .btn-eliminar {
+    padding: 8px 15px;
+    font-size: 0.9em;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-transform: none;
+}
+.empleado-acciones .btn-editar {
+    background-color: #007bff;
+    color: white;
+}
+.empleado-acciones .btn-eliminar {
+    background-color: var(--rojo-alerta);
+    color: white;
+}
+
+/* Estilos de gestión_envios.php */
+.pedido-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed var(--verde-claro);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.pedido-header h3 {
+    margin: 0;
+    color: var(--verde-bosque);
+    border-left: none;
+    padding-left: 0;
+}
+
+/* Etiquetas de estado */
+.estado-enpreparacion {
+    background-color: var(--amarillo-miel);
+    color: var(--texto-oscuro);
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+.estado-encamino {
+    background-color: #007bff; /* Azul para en camino */
+    color: white;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Ajuste de media query para asegurar la responsividad en admin */
+@media (max-width: 768px) {
+    .empleado {
+        flex-direction: column;
+    }
+    .empleado-acciones {
+        width: 100%;
+        justify-content: space-around;
+        margin-top: 15px;
+        border-top: 1px dashed var(--gris-suave);
+        padding-top: 15px;
+    }
+    .empleado-acciones .btn-editar, .empleado-acciones .btn-eliminar {
+        flex-basis: 45%;
+        text-align: center;
+    }
+    .pedido-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .pedido-header form {
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        gap: 10px;
+    }
+    .pedido-header select {
+        flex-grow: 1;
+    }
+}
